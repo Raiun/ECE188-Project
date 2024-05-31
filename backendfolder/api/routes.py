@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from models import db, User, Story, Evaluation
-
+import random
 main = Blueprint('main', __name__)
 
 @main.route('/users', methods=['POST'])
@@ -37,3 +37,13 @@ def get_story(story_id):
     story = Story.query.get_or_404(story_id)
     return jsonify({"title": story.title, "content": story.content})
 
+@main.route('/recommendations', methods=['GET'])
+def get_recommendations():
+    stories = Story.query.all()
+    if not stories:
+        return jsonify({"message": "No stories available"}), 404
+
+    recommended_stories = random.sample(stories, min(len(stories), 3))
+
+    recommendations = [{"id": story.id, "title": story.title, "content": story.content} for story in recommended_stories]
+    return jsonify({"recommendations": recommendations})
