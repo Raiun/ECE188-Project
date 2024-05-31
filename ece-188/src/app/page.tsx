@@ -5,7 +5,6 @@ import Dashboard from "@/Components/Dashboard";
 export default function Home() {
   return (
     <div className="flex">
-        <Sidebar></Sidebar>
         <Dashboard></Dashboard>
     </div>
   );
