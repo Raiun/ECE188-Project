@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Sidebar from "../Components/Sidebar"
+import Dashboard from "@/Components/Dashboard";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between">
-      <div>
+    <div className="flex">
         <Sidebar></Sidebar>
-      </div>
-    </main>
+        <Dashboard></Dashboard>
+    </div>
   );
 }
 
