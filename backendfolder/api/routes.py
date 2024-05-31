@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from models import db, User, Story, Evaluation
 import random
+
 main = Blueprint('main', __name__)
 
 @main.route('/users', methods=['POST'])
