@@ -177,6 +177,6 @@ const transcribe = async (
         });
         return null;
     });
-
+    console.log(output);
     return output;
 };
