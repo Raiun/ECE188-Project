@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { pipeline, env } from "@xenova/transformers";
 
 // Disable local models
