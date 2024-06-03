@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Sidebar from "../Components/Sidebar"
 import Dashboard from "@/Components/Dashboard";
 
 export default function Home() {
