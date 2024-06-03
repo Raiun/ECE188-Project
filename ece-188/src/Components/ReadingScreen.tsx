@@ -3,6 +3,7 @@
 import * as React from "react";
 import { AudioManager } from "./AudioManager";
 import { useTranscriber } from "../hooks/useTranscriber";
+import Transcript from "./Transcript";
 
 const ReadingScreen = () => {
   const transcriber = useTranscriber();
@@ -13,6 +14,7 @@ const ReadingScreen = () => {
             Read Along!
         </h1>
         <AudioManager transcriber={transcriber}></AudioManager>
+        <Transcript transcribedData={transcriber.output}></Transcript>
     </div>
   );
 }
