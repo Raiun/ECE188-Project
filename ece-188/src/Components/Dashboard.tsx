@@ -1,7 +1,19 @@
 "use client"
 
 import * as React from "react";
+import Image from 'next/image'
 import Link from "next/link"
+
+const storiesList = [
+  { name: "Cat in the Hat", image: "/catInHat.jpg", link: "/ReadAlong" },
+  { name: "A Bad Case of Stripes", image: "/badCaseOfStripes.jpg", link: "/ReadAlong"},
+  { name: "Brown Bear, Brown Bear...", image: "/brownBear.jpg", link: "/ReadAlong" },
+  { name: "The Very Hungry Caterpillar", image: "/hungryCaterpillar.jpg", link: "/ReadAlong" },
+  { name: "The Very Hungry Caterpillar", image: "/hungryCaterpillar.jpg", link: "/ReadAlong" },
+  { name: "Horton Hears A Who", image: "/cloudyWMeatballs.jpg", link: "/ReadAlong" },
+  { name: "Horton Hears A Who", image: "/hortonHearsWho.jpg", link: "/ReadAlong" },
+  { name: "Cloudy With a Chance of...", image: "/cloudyWMeatballs.jpg", link: "/ReadAlong" },
+];
 
 function loadStory() {
 
@@ -9,21 +21,22 @@ function loadStory() {
 
 const Dashboard = () => {
   return (
-    <div className="w-full h-30 ml-10 mr-10 mt-12 bg-white overflow-hidden shadow-lg">
-        <h1 className="mt-10 m-auto font-bold text-center text-xl">
+    <div className="w-full h-30 ml-10 mr-10 mt-20 bg-white overflow-hidden shadow-lg">
+        <h1 className="mt-10 m-auto font-bold text-center text-4xl">
             Recommended Stories
         </h1>
         <div className="mt-10 grid grid-cols-4 gap-4 place-items-center">
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">
-              <Link href="/ReadAlong">01</Link>
+        {storiesList.map((story, index) => (
+          <Link href={story.link}>
+            <div
+            key={index}
+            className="w-80 h-48 shadow-lg bg-black hover:bg-gray-300 text-white flex flex-col items-center justify-center"
+            >
+              <img className="h-4/5" src={story.image} alt={story.name}></img>
+              {story.name}
             </div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">02</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">03</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">04</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">05</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">06</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">07</div>
-            <div className="w-80 h-48 border-black border-2 hover:bg-gray-300">08</div>
+          </Link>
+        ))}
         </div>
     </div>
   );

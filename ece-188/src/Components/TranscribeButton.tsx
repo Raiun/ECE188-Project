@@ -21,7 +21,7 @@ export function TranscribeButton(props: Props): JSX.Element {
             ) : isTranscribing ? (
                 <Spinner text={"Transcribing..."} />
             ) : (
-                "Transcribe Audio"
+                "Submit Audio"
             )}
         </button>
     );
