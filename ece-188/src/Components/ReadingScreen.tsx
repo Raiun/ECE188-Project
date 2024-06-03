@@ -15,6 +15,7 @@ const ReadingScreen = () => {
         </h1>
         <AudioManager transcriber={transcriber}></AudioManager>
         <Transcript transcribedData={transcriber.output}></Transcript>
+        {transcriber.output?.text.includes("Hello") && <p>CORRECT!</p>}
     </div>
   );
 }
