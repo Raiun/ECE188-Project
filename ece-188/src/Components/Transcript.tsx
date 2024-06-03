@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 
 import { TranscriberData } from "../hooks/useTranscriber";
-import { formatAudioTimestamp } from "../utils/AudioUtils";
+import { formatAudioTimestamp } from "@/utils/AudioUtils";
 
 interface Props {
     transcribedData: TranscriberData | undefined;
