@@ -145,7 +145,7 @@ export function AudioManager(props: { transcriber: Transcriber }) {
                         <>
                             <RecordTile
                                 icon={<MicrophoneIcon />}
-                                text={"Record"}
+                                text={"Click to Read"}
                                 setAudioData={(e) => {
                                     props.transcriber.onInputChange();
                                     setAudioFromRecording(e);

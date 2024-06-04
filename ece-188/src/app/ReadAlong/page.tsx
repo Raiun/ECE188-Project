@@ -1,8 +1,8 @@
 import ReadingScreen from "@/Components/ReadingScreen";
 
 
-export default function ReadAlong() {
+export default function ReadAlong(props: {storyName : string;}) {
   return (
-    <ReadingScreen></ReadingScreen>
+    <ReadingScreen storyName={props.storyName}></ReadingScreen>
   );
 }
